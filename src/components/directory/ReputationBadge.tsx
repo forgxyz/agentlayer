@@ -19,14 +19,19 @@ export default function ReputationBadge({ score, size = 'md' }: ReputationBadgeP
   const center = size === 'sm' ? 15 : 20;
 
   return (
-    <div className={`relative ${dims} flex items-center justify-center`}>
+    <div
+      className={`relative ${dims} flex items-center justify-center`}
+      style={{
+        filter: `drop-shadow(0 0 8px ${color}40)`
+      }}
+    >
       <svg className="absolute inset-0" viewBox={viewBox}>
         <circle
           cx={center}
           cy={center}
           r={r}
           fill="none"
-          stroke="rgba(255,255,255,0.05)"
+          stroke="rgba(0, 245, 255, 0.1)"
           strokeWidth={strokeWidth}
         />
         <circle
@@ -40,10 +45,19 @@ export default function ReputationBadge({ score, size = 'md' }: ReputationBadgeP
           strokeDashoffset={offset}
           strokeLinecap="round"
           transform={`rotate(-90 ${center} ${center})`}
-          style={{ transition: 'stroke-dashoffset 0.5s ease' }}
+          style={{
+            transition: 'stroke-dashoffset 0.5s ease',
+            filter: `drop-shadow(0 0 4px ${color})`
+          }}
         />
       </svg>
-      <span className={`${fontSize} font-bold`} style={{ color }}>
+      <span
+        className={`${fontSize} font-bold`}
+        style={{
+          color,
+          textShadow: `0 0 10px ${color}60`
+        }}
+      >
         {score}
       </span>
     </div>

@@ -19,26 +19,26 @@ export const CHAIN_LABELS: Record<string, string> = {
 };
 
 export const FACILITATOR_COLORS: Record<string, string> = {
-  'Coinbase': '#0052FF',
+  'Coinbase': '#00F5FF',      // Cyan glow
   'Dexter': '#FF6B35',
-  'PayAI': '#00D4AA',
-  'Daydreams': '#FF61D8',
-  'Virtuals Protocol': '#7B61FF',
-  'Meridian': '#FFB800',
-  'X402rs': '#FF4444',
-  'Mogami': '#4ECDC4',
-  'OpenX402': '#45B7D1',
-  'Thirdweb': '#F213A4',
-  'CodeNut': '#96CEB4',
-  'AnySpend': '#FFEAA7',
-  'Polygon Facilitator': '#8247E5',
-  'OpenFacilitator': '#00FF88',
-  'AurraCloud': '#FF9F43',
-  'Heurist': '#6C5CE7',
-  'Questflow': '#FDA7DF',
-  'x402 Jobs': '#55E6C1',
-  'Polymer': '#EB2F06',
-  'Corbits': '#A29BFE',
+  'PayAI': '#06B6D4',         // Cyan-600
+  'Daydreams': '#A78BFA',     // Purple-400
+  'Virtuals Protocol': '#8B5CF6', // Violet
+  'Meridian': '#0EA5E9',      // Sky blue
+  'X402rs': '#EF4444',
+  'Mogami': '#22D3EE',        // Cyan-400
+  'OpenX402': '#38BDF8',      // Sky-400
+  'Thirdweb': '#C084FC',      // Purple-400
+  'CodeNut': '#6EE7B7',       // Emerald-300
+  'AnySpend': '#FDE047',      // Yellow
+  'Polygon Facilitator': '#A78BFA',
+  'OpenFacilitator': '#10B981', // Emerald
+  'AurraCloud': '#FB923C',
+  'Heurist': '#818CF8',       // Indigo-400
+  'Questflow': '#F0ABFC',     // Fuchsia-300
+  'x402 Jobs': '#2DD4BF',     // Teal-400
+  'Polymer': '#F43F5E',       // Rose
+  'Corbits': '#C4B5FD',       // Violet-300
 };
 
 export const TIME_WINDOWS = [

@@ -32,10 +32,10 @@ export function computeReputationScore(agent: {
 }
 
 export function getScoreColor(score: number): string {
-  if (score >= 80) return '#00FF88';
-  if (score >= 60) return '#FFB800';
-  if (score >= 40) return '#FF6B35';
-  return '#FF4444';
+  if (score >= 80) return '#00F5FF'; // Cyan glow
+  if (score >= 60) return '#0EA5E9'; // Sky blue
+  if (score >= 40) return '#8B5CF6'; // Purple
+  return '#6366F1'; // Indigo
 }
 
 export function getScoreLabel(score: number): string {
