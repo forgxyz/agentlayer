@@ -1,0 +1,652 @@
+[
+  {
+    "source": "0x71c167e196443cd2394f3a50c74ab4a4a3bdb1d1",
+    "target": "0x5e50d23ec14ea4436582029a25313e5048e01d10",
+    "chain": "base",
+    "facilitator": "Coinbase",
+    "total_value": 2605347.43,
+    "tx_count": 2608730,
+    "first_tx": "2025-10-24T18:29:17",
+    "last_tx": "2026-01-31T16:12:23"
+  },
+  {
+    "source": "0x66fa4d79ca84016b42352be33c908dd812952ec8",
+    "target": "0x897720c5b19f93f3194990d0121d3a64783bbab8",
+    "chain": "base",
+    "facilitator": "Coinbase",
+    "total_value": 383575.15,
+    "tx_count": 149,
+    "first_tx": "2025-11-10T15:09:57",
+    "last_tx": "2025-12-31T16:47:53"
+  },
+  {
+    "source": "0x63488fccea82dd55949b4ed45894716d6960eb8f",
+    "target": "0xfa0ee7b2f13d80680f31771abc93d06a2c749150",
+    "chain": "base",
+    "facilitator": "Daydreams",
+    "total_value": 267019.07,
+    "tx_count": 133543,
+    "first_tx": "2025-11-03T03:16:49",
+    "last_tx": "2025-11-04T15:43:33"
+  },
+  {
+    "source": "BiTCHsBaJwx37cykC2TaVhFtw9oAmx7mxV5ikijxabog",
+    "target": "FUCK3n47gydH1hrBCoZbfzUZgfgpFTW8QSqFoCneN2ga",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 248962.67,
+    "tx_count": 948,
+    "first_tx": "2025-12-03T00:59:37",
+    "last_tx": "2025-12-03T03:49:36"
+  },
+  {
+    "source": "FUCK3n47gydH1hrBCoZbfzUZgfgpFTW8QSqFoCneN2ga",
+    "target": "BiTCHsBaJwx37cykC2TaVhFtw9oAmx7mxV5ikijxabog",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 247962.88,
+    "tx_count": 960,
+    "first_tx": "2025-12-03T01:00:25",
+    "last_tx": "2025-12-03T03:49:33"
+  },
+  {
+    "source": "399DALzeuE83uk7gdKP2AmZTbHxKyviWECeDGszjLGG8",
+    "target": "8VBmdiVAffkhE1hpLZkStAgT8a3eJQm4hExUhPEtN73E",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 192809.59,
+    "tx_count": 20112,
+    "first_tx": "2025-11-30T10:45:00",
+    "last_tx": "2025-12-25T01:06:32"
+  },
+  {
+    "source": "0x57cb209aa9858fcf9e43634973f53e9e62360322",
+    "target": "0xdc365f7a21568e02280c7427065114fa914240bd",
+    "chain": "base",
+    "facilitator": "Coinbase",
+    "total_value": 171577.12,
+    "tx_count": 171606,
+    "first_tx": "2025-10-26T16:12:19",
+    "last_tx": "2025-10-30T07:36:51"
+  },
+  {
+    "source": "0x63488fccea82dd55949b4ed45894716d6960eb8f",
+    "target": "0xfa0ee7b2f13d80680f31771abc93d06a2c749150",
+    "chain": "base",
+    "facilitator": "Coinbase",
+    "total_value": 151653.41,
+    "tx_count": 75847,
+    "first_tx": "2025-11-02T13:55:07",
+    "last_tx": "2025-11-05T09:14:27"
+  },
+  {
+    "source": "0x61d8e97f68feae22ca735e681c0dbd0ed17fa2e8",
+    "target": "0x8e7769d440b3460b92159dd9c6d17302b036e2d6",
+    "chain": "base",
+    "facilitator": "Meridian",
+    "total_value": 147922.06,
+    "tx_count": 500,
+    "first_tx": "2025-12-01T21:27:47",
+    "last_tx": "2025-12-24T14:52:11"
+  },
+  {
+    "source": "0x8e7769d440b3460b92159dd9c6d17302b036e2d6",
+    "target": "0x61d8e97f68feae22ca735e681c0dbd0ed17fa2e8",
+    "chain": "base",
+    "facilitator": "Meridian",
+    "total_value": 146432.94,
+    "tx_count": 499,
+    "first_tx": "2025-12-01T21:27:47",
+    "last_tx": "2025-12-24T14:52:11"
+  },
+  {
+    "source": "0xcc3afa4cdda6798d34f8a8d1e85db793a1f50f03",
+    "target": "0x8e7769d440b3460b92159dd9c6d17302b036e2d6",
+    "chain": "base",
+    "facilitator": "Meridian",
+    "total_value": 123575.31,
+    "tx_count": 2679,
+    "first_tx": "2025-12-10T16:59:13",
+    "last_tx": "2026-01-17T10:26:37"
+  },
+  {
+    "source": "0x8e7769d440b3460b92159dd9c6d17302b036e2d6",
+    "target": "0xcc3afa4cdda6798d34f8a8d1e85db793a1f50f03",
+    "chain": "base",
+    "facilitator": "Meridian",
+    "total_value": 122339.55,
+    "tx_count": 2679,
+    "first_tx": "2025-12-10T16:59:13",
+    "last_tx": "2026-01-17T10:26:37"
+  },
+  {
+    "source": "0x90872f4f373fa502078f84c9870e5a5452b1ac11",
+    "target": "0x5e50d23ec14ea4436582029a25313e5048e01d10",
+    "chain": "base",
+    "facilitator": "Coinbase",
+    "total_value": 88427.56,
+    "tx_count": 3592388,
+    "first_tx": "2025-10-26T03:14:33",
+    "last_tx": "2026-01-31T17:56:23"
+  },
+  {
+    "source": "0xe96e69c5f2aa672f6c49984923907422d90ff476",
+    "target": "0x8e7769d440b3460b92159dd9c6d17302b036e2d6",
+    "chain": "base",
+    "facilitator": "Meridian",
+    "total_value": 86263.82,
+    "tx_count": 3716,
+    "first_tx": "2026-01-20T20:34:03",
+    "last_tx": "2026-02-06T13:29:23"
+  },
+  {
+    "source": "0x76183be831c0287448e5e06164ea6f4176bee52e",
+    "target": "0xfdc73317d5beefd8dd6953c0426f0c65ea747841",
+    "chain": "base",
+    "facilitator": "Coinbase",
+    "total_value": 86199.42,
+    "tx_count": 86214,
+    "first_tx": "2025-10-25T10:08:21",
+    "last_tx": "2025-10-30T14:53:01"
+  },
+  {
+    "source": "0xa77b0a9f4ad0b87dd16a6af482122eab6e201e12",
+    "target": "0xef4364fe4487353df46eb7c811d4fac78b856c7f",
+    "chain": "base",
+    "facilitator": "Virtuals Protocol",
+    "total_value": 58971.36,
+    "tx_count": 2342,
+    "first_tx": "2025-11-10T15:55:01",
+    "last_tx": "2025-12-17T07:42:45"
+  },
+  {
+    "source": "0xc32cca921dbaa2af9085cec0fcf10ad8d5dbe0bf",
+    "target": "0xef4364fe4487353df46eb7c811d4fac78b856c7f",
+    "chain": "base",
+    "facilitator": "Virtuals Protocol",
+    "total_value": 51433.74,
+    "tx_count": 2427,
+    "first_tx": "2025-11-17T03:58:37",
+    "last_tx": "2026-01-29T15:58:53"
+  },
+  {
+    "source": "0xbbd567365bf6bbef0e597a069cb2c51442d10c47",
+    "target": "0xef4364fe4487353df46eb7c811d4fac78b856c7f",
+    "chain": "base",
+    "facilitator": "Virtuals Protocol",
+    "total_value": 42850.09,
+    "tx_count": 1772,
+    "first_tx": "2025-12-04T10:10:39",
+    "last_tx": "2026-01-31T00:25:39"
+  },
+  {
+    "source": "0xb2312e39663c6bde94d29a803e430de173f0c9d3",
+    "target": "0xef4364fe4487353df46eb7c811d4fac78b856c7f",
+    "chain": "base",
+    "facilitator": "Virtuals Protocol",
+    "total_value": 40282.78,
+    "tx_count": 6060,
+    "first_tx": "2025-11-13T04:36:21",
+    "last_tx": "2026-01-29T05:03:09"
+  },
+  {
+    "source": "Dex8E7ZSdjB6tko5SGYUBc9oKf3NRhYtuZeK6Z1VpxWA",
+    "target": "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw",
+    "chain": "solana",
+    "facilitator": "Dexter",
+    "total_value": 46571.68,
+    "tx_count": 74252,
+    "first_tx": "2025-11-14T07:22:00",
+    "last_tx": "2026-01-29T23:59:00"
+  },
+  {
+    "source": "Dex5bdoMtqh38HkWmzs9b54YheJWLhpidLF5hmtg3sgc",
+    "target": "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw",
+    "chain": "solana",
+    "facilitator": "Dexter",
+    "total_value": 46550.64,
+    "tx_count": 76853,
+    "first_tx": "2025-11-14T07:22:00",
+    "last_tx": "2026-01-29T23:59:00"
+  },
+  {
+    "source": "DexskeGhqfN86WgFVgWTNY5vfGqJR3ArFQoEByW7Htd5",
+    "target": "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw",
+    "chain": "solana",
+    "facilitator": "Dexter",
+    "total_value": 46112.65,
+    "tx_count": 72919,
+    "first_tx": "2025-11-14T07:22:00",
+    "last_tx": "2026-01-29T23:59:00"
+  },
+  {
+    "source": "DexxeXVej8gfoVv9NEoEaBxbxC98EmU9MH7St3Da6dig",
+    "target": "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw",
+    "chain": "solana",
+    "facilitator": "Dexter",
+    "total_value": 45856.03,
+    "tx_count": 72212,
+    "first_tx": "2025-11-14T07:22:00",
+    "last_tx": "2026-01-29T23:59:00"
+  },
+  {
+    "source": "DexSin2SWYj7tLfr5ipbyuMRC2vijAdJTQxofuPaxEuW",
+    "target": "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw",
+    "chain": "solana",
+    "facilitator": "Dexter",
+    "total_value": 45791.53,
+    "tx_count": 76849,
+    "first_tx": "2025-11-14T07:22:00",
+    "last_tx": "2026-01-29T23:59:00"
+  },
+  {
+    "source": "Dexm5zbVpDfCYr4qsggZFPGQJk66UevZ2qn8fqUk5xbX",
+    "target": "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw",
+    "chain": "solana",
+    "facilitator": "Dexter",
+    "total_value": 45602.49,
+    "tx_count": 72795,
+    "first_tx": "2025-11-14T07:22:00",
+    "last_tx": "2026-01-29T23:59:00"
+  },
+  {
+    "source": "DexUBQfwG9crxnLKoz9avXT5LmfQZmnqg3Hs6YrUgZyy",
+    "target": "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw",
+    "chain": "solana",
+    "facilitator": "Dexter",
+    "total_value": 45466.87,
+    "tx_count": 74692,
+    "first_tx": "2025-11-14T07:22:00",
+    "last_tx": "2026-01-29T23:59:00"
+  },
+  {
+    "source": "DexdtuqPwYLf5XBMb2aaW1u1UJjpdP9oLfZtZSgvXTDf",
+    "target": "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw",
+    "chain": "solana",
+    "facilitator": "Dexter",
+    "total_value": 45349.25,
+    "tx_count": 74814,
+    "first_tx": "2025-11-14T07:22:00",
+    "last_tx": "2026-01-29T23:59:00"
+  },
+  {
+    "source": "DexyVmWPRrgvAqi9D3wesUcFAXpyu3TGVR3EqNsmy4Vp",
+    "target": "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw",
+    "chain": "solana",
+    "facilitator": "Dexter",
+    "total_value": 44225.56,
+    "tx_count": 73369,
+    "first_tx": "2025-11-14T07:22:00",
+    "last_tx": "2026-01-29T23:59:00"
+  },
+  {
+    "source": "Dexxa4u5d78R36fJJo6jWTV8f9zPQKJMFrN2L3SXCuc",
+    "target": "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw",
+    "chain": "solana",
+    "facilitator": "Dexter",
+    "total_value": 44216.18,
+    "tx_count": 74235,
+    "first_tx": "2025-11-14T07:22:00",
+    "last_tx": "2026-01-29T23:59:00"
+  },
+  {
+    "source": "Dexq4QqvZ1evu2T5T9nD5KDmso11b75tM3yDvz1oWR4a",
+    "target": "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw",
+    "chain": "solana",
+    "facilitator": "Dexter",
+    "total_value": 43792.13,
+    "tx_count": 72504,
+    "first_tx": "2025-11-14T07:22:00",
+    "last_tx": "2026-01-29T23:59:00"
+  },
+  {
+    "source": "DexESzpFVwxi31PUJLbBCLhg9175XKLFXNTi4bAzD6iA",
+    "target": "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw",
+    "chain": "solana",
+    "facilitator": "Dexter",
+    "total_value": 43765.8,
+    "tx_count": 70001,
+    "first_tx": "2025-11-14T07:22:00",
+    "last_tx": "2026-01-29T23:59:00"
+  },
+  {
+    "source": "Dex5aCcNj8zdoBsZ4drat5Lk2zHt9iat2BXjCpJchoKS",
+    "target": "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw",
+    "chain": "solana",
+    "facilitator": "Dexter",
+    "total_value": 43655.57,
+    "tx_count": 71614,
+    "first_tx": "2025-11-14T07:22:00",
+    "last_tx": "2026-01-29T23:59:00"
+  },
+  {
+    "source": "DexKtbA8HzdaD2347xsjk7c88wieRwwPDTXovfgQuHsj",
+    "target": "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw",
+    "chain": "solana",
+    "facilitator": "Dexter",
+    "total_value": 43433.86,
+    "tx_count": 69317,
+    "first_tx": "2025-11-14T07:22:00",
+    "last_tx": "2026-01-29T23:59:00"
+  },
+  {
+    "source": "J2GdAmaBWwRF2crPw5SVor8hPVeGnCpFF94XEW6885xS",
+    "target": "8VBmdiVAffkhE1hpLZkStAgT8a3eJQm4hExUhPEtN73E",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 99731.28,
+    "tx_count": 12362,
+    "first_tx": "2025-11-30T10:56:42",
+    "last_tx": "2025-12-25T01:06:32"
+  },
+  {
+    "source": "2wysadVMaHryiRCUreZ1L3RboBz3epwftVvSG5DCmBKX",
+    "target": "8VBmdiVAffkhE1hpLZkStAgT8a3eJQm4hExUhPEtN73E",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 96143.68,
+    "tx_count": 31177,
+    "first_tx": "2025-11-30T10:56:42",
+    "last_tx": "2025-12-25T01:06:32"
+  },
+  {
+    "source": "DSQGzxScGf2vgosRTrE4oMZjFLbTGgkJLKX3cDA5mkwz",
+    "target": "8VBmdiVAffkhE1hpLZkStAgT8a3eJQm4hExUhPEtN73E",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 90377.06,
+    "tx_count": 12252,
+    "first_tx": "2025-11-30T10:56:42",
+    "last_tx": "2025-12-25T01:06:32"
+  },
+  {
+    "source": "GCiF6erza2NdWJ4r1NVXBLMEc74q4UeHF8NWdA8eVLGu",
+    "target": "8VBmdiVAffkhE1hpLZkStAgT8a3eJQm4hExUhPEtN73E",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 89087.29,
+    "tx_count": 12169,
+    "first_tx": "2025-11-30T10:56:42",
+    "last_tx": "2025-12-25T01:06:32"
+  },
+  {
+    "source": "4VW54uawFtHeAJry2k5Rh3rnBSEcpWyAURvYsRUkZMQY",
+    "target": "8VBmdiVAffkhE1hpLZkStAgT8a3eJQm4hExUhPEtN73E",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 79861.05,
+    "tx_count": 29956,
+    "first_tx": "2025-11-30T10:56:42",
+    "last_tx": "2025-12-25T01:06:32"
+  },
+  {
+    "source": "Fz9oytBvMJBiE43rnCrNBjroedrUh84AHjsfeeGH6AhH",
+    "target": "8VBmdiVAffkhE1hpLZkStAgT8a3eJQm4hExUhPEtN73E",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 62915.61,
+    "tx_count": 6293,
+    "first_tx": "2025-11-30T10:56:42",
+    "last_tx": "2025-12-25T01:06:32"
+  },
+  {
+    "source": "FMfHcu2Dh1oXzY44zp4742TxxqPn4pXWYEBqqjDeJ9wG",
+    "target": "8VBmdiVAffkhE1hpLZkStAgT8a3eJQm4hExUhPEtN73E",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 62711.96,
+    "tx_count": 8637,
+    "first_tx": "2025-11-30T10:56:42",
+    "last_tx": "2025-12-25T01:06:32"
+  },
+  {
+    "source": "DYnHZsmZtKqaUsbBMsDuJAJgJaFxnGiHenJ3syApAgVy",
+    "target": "8VBmdiVAffkhE1hpLZkStAgT8a3eJQm4hExUhPEtN73E",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 53879.37,
+    "tx_count": 5739,
+    "first_tx": "2025-11-30T10:56:42",
+    "last_tx": "2025-12-25T01:06:32"
+  },
+  {
+    "source": "HV6vCBu4krovSMScbWyLPz9YTNhQ8cKXQFS9QE8yGcRb",
+    "target": "8VBmdiVAffkhE1hpLZkStAgT8a3eJQm4hExUhPEtN73E",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 48992.54,
+    "tx_count": 12277,
+    "first_tx": "2025-11-30T10:56:42",
+    "last_tx": "2025-12-25T01:06:32"
+  },
+  {
+    "source": "GEASDJjr95ekhEmQFmPbFXkom56xABB9PiNL8mis3ZZT",
+    "target": "8VBmdiVAffkhE1hpLZkStAgT8a3eJQm4hExUhPEtN73E",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 45427.09,
+    "tx_count": 7789,
+    "first_tx": "2025-11-30T10:56:42",
+    "last_tx": "2025-12-25T01:06:32"
+  },
+  {
+    "source": "FhqwwauVuPz1z4yWopAiY5vsrbV5QQM44dFE3L8psZU2",
+    "target": "8VBmdiVAffkhE1hpLZkStAgT8a3eJQm4hExUhPEtN73E",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 44991.83,
+    "tx_count": 7044,
+    "first_tx": "2025-11-30T10:56:42",
+    "last_tx": "2025-12-25T01:06:32"
+  },
+  {
+    "source": "AsEDd1vqP4AT4jnycoum22Z1cdKGKuwz3aWevUDbkmxE",
+    "target": "8VBmdiVAffkhE1hpLZkStAgT8a3eJQm4hExUhPEtN73E",
+    "chain": "solana",
+    "facilitator": "PayAI",
+    "total_value": 20285.39,
+    "tx_count": 3065263,
+    "first_tx": "2025-11-30T10:56:42",
+    "last_tx": "2025-12-25T01:06:32"
+  },
+  {
+    "source": "0x3ac46390d57d36a9a0bd2221635d41901dfd0e35",
+    "target": "0x8d80ff1313177da1efddd4d299d805cffeba43f4",
+    "chain": "base",
+    "facilitator": "Daydreams",
+    "total_value": 48871.23,
+    "tx_count": 195530,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0x8d80ff1313177da1efddd4d299d805cffeba43f4",
+    "target": "0x3ac46390d57d36a9a0bd2221635d41901dfd0e35",
+    "chain": "base",
+    "facilitator": "Daydreams",
+    "total_value": 48867.97,
+    "tx_count": 195517,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0xb84f47aba03234e5626894e1545e8c512e75a86c",
+    "target": "0x882059ed94c15594bc5f4a4e74c8f97bebe260ff",
+    "chain": "base",
+    "facilitator": "Daydreams",
+    "total_value": 25493.58,
+    "tx_count": 255,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0x3899807f59f4749c56b88b5710ec348c81d3b258",
+    "target": "0xb84f47aba03234e5626894e1545e8c512e75a86c",
+    "chain": "base",
+    "facilitator": "Daydreams",
+    "total_value": 25493.58,
+    "tx_count": 255,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0x1c8c5413e2c98d5d2e3c3296e19e8b1aa2f99458",
+    "target": "0x3899807f59f4749c56b88b5710ec348c81d3b258",
+    "chain": "base",
+    "facilitator": "Daydreams",
+    "total_value": 25293.65,
+    "tx_count": 253,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0x882059ed94c15594bc5f4a4e74c8f97bebe260ff",
+    "target": "0x1c8c5413e2c98d5d2e3c3296e19e8b1aa2f99458",
+    "chain": "base",
+    "facilitator": "Daydreams",
+    "total_value": 25293.65,
+    "tx_count": 253,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0xfad48f34251efbc40d4aadfd60d0400e605ed7da",
+    "target": "0x8e7769d440b3460b92159dd9c6d17302b036e2d6",
+    "chain": "base",
+    "facilitator": "Meridian",
+    "total_value": 53491.29,
+    "tx_count": 711,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0x8e7769d440b3460b92159dd9c6d17302b036e2d6",
+    "target": "0xfad48f34251efbc40d4aadfd60d0400e605ed7da",
+    "chain": "base",
+    "facilitator": "Meridian",
+    "total_value": 52945.06,
+    "tx_count": 747,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0x14ca2791f2a6c0725de56103966a0bbb593e8ca7",
+    "target": "0x8e7769d440b3460b92159dd9c6d17302b036e2d6",
+    "chain": "base",
+    "facilitator": "Meridian",
+    "total_value": 67830.98,
+    "tx_count": 2998,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0x8e7769d440b3460b92159dd9c6d17302b036e2d6",
+    "target": "0x14ca2791f2a6c0725de56103966a0bbb593e8ca7",
+    "chain": "base",
+    "facilitator": "Meridian",
+    "total_value": 67152.67,
+    "tx_count": 2998,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0xfcf24e7199e5a1885b4290994017f4e79245c6de",
+    "target": "0x8e7769d440b3460b92159dd9c6d17302b036e2d6",
+    "chain": "base",
+    "facilitator": "Meridian",
+    "total_value": 96881.24,
+    "tx_count": 1815,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0x8e7769d440b3460b92159dd9c6d17302b036e2d6",
+    "target": "0xfcf24e7199e5a1885b4290994017f4e79245c6de",
+    "chain": "base",
+    "facilitator": "Meridian",
+    "total_value": 95912.43,
+    "tx_count": 1815,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0x519393a43a365563264bbde346aac4e67ad2c7f6",
+    "target": "0x8e7769d440b3460b92159dd9c6d17302b036e2d6",
+    "chain": "base",
+    "facilitator": "Meridian",
+    "total_value": 37055.63,
+    "tx_count": 125,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0x8e7769d440b3460b92159dd9c6d17302b036e2d6",
+    "target": "0x519393a43a365563264bbde346aac4e67ad2c7f6",
+    "chain": "base",
+    "facilitator": "Meridian",
+    "total_value": 36685.07,
+    "tx_count": 125,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0x071f72aadfbdcd8528034fc763cbf69da9e9683c",
+    "target": "0x439860417871ee23212527b24fb538553ff5af3c",
+    "chain": "base",
+    "facilitator": "Coinbase",
+    "total_value": 56872.07,
+    "tx_count": 56882,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0x30ce1ca7dfe268a30f01ed7c1a22c984b10f3287",
+    "target": "0x83821cd12274f7ca1fe9f31bbef81f2103a4777e",
+    "chain": "base",
+    "facilitator": "Coinbase",
+    "total_value": 48043.43,
+    "tx_count": 4,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0xd6c20a5ffc593e7b7067df2dabe8a070cfdf448d",
+    "target": "0xf0dd0179d7584ee37cffb3ff0409df074fedda22",
+    "chain": "base",
+    "facilitator": "Mogami",
+    "total_value": 47886.87,
+    "tx_count": 1,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0xddc65ea0b4c4a7b3845d88f96f02a85dea248b7f",
+    "target": "0xddc65ea0b4c4a7b3845d88f96f02a85dea248b7f",
+    "chain": "base",
+    "facilitator": "Thirdweb",
+    "total_value": 45564,
+    "tx_count": 4571,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0x66fa4d79ca84016b42352be33c908dd812952ec8",
+    "target": "0x897720c5b19f93f3194990d0121d3a64783bbab8",
+    "chain": "polygon",
+    "facilitator": "Polygon Facilitator",
+    "total_value": 22513.93,
+    "tx_count": 12,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  },
+  {
+    "source": "0x897720c5b19f93f3194990d0121d3a64783bbab8",
+    "target": "0x66fa4d79ca84016b42352be33c908dd812952ec8",
+    "chain": "polygon",
+    "facilitator": "Polygon Facilitator",
+    "total_value": 1754.04,
+    "tx_count": 115591,
+    "first_tx": "2025-10-01T00:00:00",
+    "last_tx": "2026-02-06T00:00:00"
+  }
+]

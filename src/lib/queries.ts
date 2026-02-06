@@ -1,0 +1,10 @@
+// Saved Explorer query IDs
+export const QUERY_IDS = {
+  GRAPH_NODES: 'bLnqSgH5Q83Mzkn8S69g',
+  GRAPH_EDGES: '8zr2rq1q9hcgNMpf3blL',
+  AGENT_DIRECTORY: 'OMRthXFeIIUu6YKwlIrG',
+  VALUE_FLOWS_DAILY: 'h7gYaCvhJLT8sAtk6Nq1',
+  FACILITATOR_SUMMARY: 'McdkOzHn78N2rDOBc6uc',
+  ERC8004_AGENTS: 'LbDVuu3K12pUjED0FLzG',
+  ERC8004_FEEDBACK: '1kdwenyf73f3wP9Mqh3y',
+} as const;
