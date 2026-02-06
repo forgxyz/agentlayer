@@ -33,11 +33,19 @@ export async function runExplorerQuery<T>(
   }
 
   const runData = await runRes.json();
+
+  // Check if results returned synchronously (cached query)
+  if (runData.data && Array.isArray(runData.data)) {
+    console.log('✅ Query returned cached results synchronously');
+    return runData.data;
+  }
+
+  // Async execution - get run_id and poll
   const run_id = runData.run_id || runData.id || runData.runId;
 
   if (!run_id) {
     console.error('Run response:', JSON.stringify(runData));
-    throw new Error('No run_id in response from query start');
+    throw new Error('No run_id or data in response from query start');
   }
 
   // Poll for results (5 minutes max for heavy queries)
