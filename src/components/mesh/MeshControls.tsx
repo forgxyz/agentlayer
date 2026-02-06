@@ -3,7 +3,6 @@
 interface MeshControlsProps {
   tier: 'facilitator' | 'agents';
   onTierChange: (tier: 'facilitator' | 'agents') => void;
-  onFit: () => void;
 }
 
 export default function MeshControls({ tier, onTierChange }: MeshControlsProps) {
