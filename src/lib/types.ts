@@ -45,6 +45,11 @@ export interface Agent {
   erc8004_feedback_count?: number;
   erc8004_feedback_raw_count?: number;
   erc8004_avg_score?: number | null;
+  // x402scan server fields
+  server_name?: string | null;
+  server_url?: string | null;
+  server_description?: string | null;
+  server_x402scan_url?: string | null;
 }
 
 export interface DailyFlow {

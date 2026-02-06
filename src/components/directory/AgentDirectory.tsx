@@ -165,10 +165,10 @@ export default function AgentDirectory({ agents, onAgentSelect, selectedAgent }:
                       <span className="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0" title="ERC-8004 Registered" />
                     )}
                     <div className="min-w-0">
-                      {agent.erc8004_name ? (
+                      {(agent.erc8004_name || agent.server_name) ? (
                         <>
                           <span className="text-sm text-white block truncate max-w-[200px]">
-                            {agent.erc8004_name}
+                            {agent.erc8004_name || agent.server_name}
                           </span>
                           <span className="text-[10px] font-mono text-zinc-600">
                             {truncateAddress(agent.address)}

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { computeReputationScore } from '@/lib/reputation';
 import { deduplicateFeedback, annotateFeedback } from '@/lib/feedback-dedup';
+import { lookupServer } from '@/lib/server-lookup';
 
 import agentsData from '../../../../../public/data/agents.json';
 import participantsData from '../../../../../public/data/participants.json';
@@ -71,6 +72,10 @@ export async function GET(
       erc8004_feedback_count: 0,
       erc8004_feedback_raw_count: 0,
       erc8004_avg_score: null as number | null,
+      server_name: null as string | null,
+      server_url: null as string | null,
+      server_description: null as string | null,
+      server_x402scan_url: null as string | null,
     };
 
     if (participantRaw) {
@@ -104,6 +109,10 @@ export async function GET(
       erc8004_feedback_count: 0,
       erc8004_feedback_raw_count: 0,
       erc8004_avg_score: null as number | null,
+      server_name: null as string | null,
+      server_url: null as string | null,
+      server_description: null as string | null,
+      server_x402scan_url: null as string | null,
     };
     if (agent.tx_count > 0) {
       agent.avg_tx_value = agent.total_value_usd / agent.tx_count;
@@ -136,6 +145,10 @@ export async function GET(
       erc8004_feedback_count: 0,
       erc8004_feedback_raw_count: 0,
       erc8004_avg_score: null as number | null,
+      server_name: null as string | null,
+      server_url: null as string | null,
+      server_description: null as string | null,
+      server_x402scan_url: null as string | null,
     };
   }
 
@@ -181,6 +194,15 @@ export async function GET(
     registered_at: String(a.registered_at || ''),
     transaction_hash: String(a.transaction_hash || ''),
   }));
+
+  // Enrich with x402scan server info
+  const server = lookupServer(addr);
+  if (server) {
+    agent.server_name = server.name;
+    agent.server_url = server.url;
+    agent.server_description = server.description;
+    agent.server_x402scan_url = server.x402scan_url;
+  }
 
   // Compute reputation
   agent.reputation_score = computeReputationScore({

@@ -1,0 +1,254 @@
+[
+  {
+    "name": "Agent Neo",
+    "url": "https://server.agentneo.pro",
+    "description": "Agent Neo | An Agent Infrastructure OS to turn raw Solana DEX intelligence into machine-optimized data feeds (Pills) via x402.",
+    "x402scan_url": "https://www.x402scan.com/server/ebd19409-879c-48a9-98de-0a3c616efce1",
+    "addresses": ["7vhcwvqiYUi8VrNpJuvJfSAQsN3HCxqpDrUa33P9kJ6k"]
+  },
+  {
+    "name": "x402 Facilitator - Dexter",
+    "url": "https://x402.dexter.cash",
+    "description": "The Dexter x402 Facilitator is publicly available for any developer to integrate. We handle payment verification, signing, and settlement on Solana and Base.",
+    "x402scan_url": "https://www.x402scan.com/server/76434304-54f7-44f6-9d8d-91a5e189edcb",
+    "addresses": ["0x9421c7ca7d8dcee9760d72be81137ee162003c36", "DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw"]
+  },
+  {
+    "name": "enrichx402 - Enrichment for Agents",
+    "url": "https://enrichx402.com",
+    "description": "Access Apollo, Clado, Exa, Firecrawl, Google Maps, Grok, Serper, and Whitepages APIs through a single x402 payment interface. No auth, no subscriptions, just USDC.",
+    "x402scan_url": "https://www.x402scan.com/server/bc9dc00a-c7d5-458e-8d67-e2d2ddb60a2a",
+    "addresses": ["0x325bdf6f7efab24a2210c48c1b64cab2eae1d430"]
+  },
+  {
+    "name": "SniperX - x402 super AI agent for sniping Alpha and Newpair on Solana",
+    "url": "https://x402.sniperx.fun",
+    "description": "SmartTrader's activity and analytics on Alpha and Newpair. High-quality Server for next-generation autonomous agents, data products, and prediction markets.",
+    "x402scan_url": "https://www.x402scan.com/server/010f69d6-ad17-4cb4-8ebf-bfba7a23f076",
+    "addresses": ["Bd2xS189uhhnxUeBeVF3JFXrg8zQgrvqZtpqh8hgkCEQ"]
+  },
+  {
+    "name": "GoPrivate",
+    "url": "https://x402.goprivate.fund",
+    "description": "GoPrivate | Privacy-first multi-wallet funding on Solana. Scalable batch payouts with configurable amounts & timing",
+    "x402scan_url": "https://www.x402scan.com/server/d27b67cf-0c38-44bb-848e-8ca6f7925b08",
+    "addresses": ["DMoQXD2X9rP64qpjuCEpNNZWuW4FnG2cRDBktM7HLGJV"]
+  },
+  {
+    "name": "ACP - Virtuals Protocol",
+    "url": "https://acp-x402.virtuals.io",
+    "description": "Pay for ACP jobs with x402 protocol on Virtuals Protocol",
+    "x402scan_url": "https://www.x402scan.com/server/bc1f8da1-bc0c-4d2c-8879-92d60aa90f02",
+    "addresses": ["0x6a1fe26d54ab0d3e1e3168f2e0c0cda5cc0a0a4a", "0xef4364fe4487353df46eb7c811d4fac78b856c7f"]
+  },
+  {
+    "name": "Neynar",
+    "url": "https://api.neynar.com",
+    "description": "Complete Farcaster developer platform",
+    "x402scan_url": "https://www.x402scan.com/server/fe272202-7c8a-4eb3-9859-fce7bbd6d6a2",
+    "addresses": ["0xa6a8736f18f383f1cc2d938576933e5ea7df01a1"]
+  },
+  {
+    "name": "FortClaw - x402 Territory Game for AI Agents",
+    "url": "https://mcp.fortclaw.com",
+    "description": "Strategy game for OpenClaw AI agents. Manage Units on the gaming map to claim rewards in USDC. x402-enabled MCP server.",
+    "x402scan_url": "https://www.x402scan.com/server/7d0d89f2-0ca9-41cf-820c-b8d23ffc0f37",
+    "addresses": ["0xb0afd9d61bdeaaff2f1aaa4a37f78c6860c9c4f8"]
+  },
+  {
+    "name": "BlackSwan",
+    "url": "https://x402.blackswan.wtf",
+    "description": "Real-time risk intelligence infrastructure for autonomous AI agents.",
+    "x402scan_url": "https://www.x402scan.com/server/e581c1ce-b654-4935-9eaa-92ff86a8a094",
+    "addresses": ["0x154b1006435e5cfe2206e7777c1003f9438119b1"]
+  },
+  {
+    "name": "BlockRun - Infrastructure for AI Agents",
+    "url": "https://blockrun.ai",
+    "description": "AI agents have wallets. Pay for intelligence with USDC. No API keys. The world has changed.",
+    "x402scan_url": "https://www.x402scan.com/server/b85dcf0f-d4a9-47ce-9d0b-6ec70e2844e0",
+    "addresses": ["0xe9030014f5dae217d0a152f02a043567b16c1abf"]
+  },
+  {
+    "name": "AWE X402 Market",
+    "url": "https://api-x402.world.fun",
+    "description": "AWE X402 Market is a decentralized service launch platform based on the x402 protocol.",
+    "x402scan_url": "https://www.x402scan.com/server/be0de54b-a1f3-4dcd-90a4-6679210f94b8",
+    "addresses": ["0x86fa14c0edcaa2966e1c2c7a1eb20bea0af09537"]
+  },
+  {
+    "name": "Prove API",
+    "url": "https://api.polymer.zone",
+    "description": "Access Polymer Labs proof generation and query service. Request proofs using proof_request or query proof status using proof_query. Supports payment proofs.",
+    "x402scan_url": "https://www.x402scan.com/server/b7148b94-4c4f-455f-a4cd-0f92787ff0f4",
+    "addresses": ["0x66c40946b0dffd04be467e18309857307ecd37cb"]
+  },
+  {
+    "name": "WeatherXM Agent API",
+    "url": "https://agent.weatherxm.com",
+    "description": "WeatherXM Agent API - x402-compatible weather API for AI agents",
+    "x402scan_url": "https://www.x402scan.com/server/b081dd2a-91f0-4779-876c-9c0adc374092",
+    "addresses": ["0xdcb51547c2f538043a45bb4b8c92f03f4682c0b3"]
+  },
+  {
+    "name": "Gloria Terminal - AI Powered News Intelligence",
+    "url": "https://api.itsgloria.ai",
+    "description": "Advanced AI-powered news analysis platform providing real-time sentiment analysis and market intelligence.",
+    "x402scan_url": "https://www.x402scan.com/server/c36d482c-4368-4b6b-ad83-7c410c1208b9",
+    "addresses": ["0xca1271e777c209e171826a681855351f4989cd0c"]
+  },
+  {
+    "name": "BaseHub - Play Games and Earn XP",
+    "url": "https://www.basehub.fun",
+    "description": "Play games and earn XP on Base network through Farcaster. Join the leaderboard!",
+    "x402scan_url": "https://www.x402scan.com/server/66b06288-bf51-441b-8b12-64b6641ab35a",
+    "addresses": ["0x7d2ceb7a0e0c39a3d0f7b5b491659fde4bb7bcfe"]
+  },
+  {
+    "name": "x402.anyspend.com",
+    "url": "https://x402.anyspend.com",
+    "description": "",
+    "x402scan_url": "https://www.x402scan.com/server/ff37cb5f-7976-42bb-a161-e5e360d8cd42",
+    "addresses": ["0x1e8e93cb91778e5b1a3639706789195a838960f8"]
+  },
+  {
+    "name": "Silverback",
+    "url": "https://x402.silverbackdefi.app",
+    "description": "Silverback is autonomous DeFi infrastructure for the agent economy. Intelligence services (swap routing, liquidity analysis, yield optimization, market data) accessible to any agent or application. Supports x402 micropayments and ERC-8004 on-chain identity.",
+    "x402scan_url": "https://www.x402scan.com/server/8cea5ec5-5f0e-4478-9532-6701d2cb4eb9",
+    "addresses": ["0xd34411a70effbdd000c529bbf572082ffdcf1794", "4HVvnhyXTkMnPbMBo9r3kfvYhzW4JSbLGdXg9SkUcVSe"]
+  },
+  {
+    "name": "Xona Agent | Creative AI Agent on Solana x402",
+    "url": "https://api.xona-agent.com",
+    "description": "A Creative AI Agent on Solana x402. Discover trends, refine ideas, generate visuals, and share your art.",
+    "x402scan_url": "https://www.x402scan.com/server/e0c4cbd0-c696-412c-b4ee-589158c6f3e9",
+    "addresses": ["9VaDVp1Wb78G4Wm6VuTiMrpESjrUymXefQTHcJGRSTEA"]
+  },
+  {
+    "name": "Stable Studio",
+    "url": "https://stablestudio.io",
+    "description": "AI image and video generation powered by micropayments. No subscriptions ever.",
+    "x402scan_url": "https://www.x402scan.com/server/9d0738fb-658b-479a-929b-cec1eedd9ead",
+    "addresses": ["0x07f067959297767c887dbfa3c72379c66e82a045"]
+  },
+  {
+    "name": "Dexter - One brain, any surface",
+    "url": "https://api.dexter.cash",
+    "description": "Realtime voice, multi-agent chat, and MCP tooling in a single adaptive crypto workspace.",
+    "x402scan_url": "https://www.x402scan.com/server/4b313293-81db-45fd-aa91-4654b930051d",
+    "addresses": ["DevFFyNWxZPtYLpEjzUnN1PFc9Po6PH7eZCi9f3tTkTw"]
+  },
+  {
+    "name": "x402.slinkylayer.ai",
+    "url": "https://x402.slinkylayer.ai",
+    "description": "",
+    "x402scan_url": "https://www.x402scan.com/server/e3e68dfd-2af7-489b-890b-c567e47d567d",
+    "addresses": ["0x4f4beb658084d7bd7ea0b6f74dbf6e99f93d422d"]
+  },
+  {
+    "name": "gifu-server.onrender.com",
+    "url": "https://gifu-server.onrender.com",
+    "description": "",
+    "x402scan_url": "https://www.x402scan.com/server/2ecfb596-3ab5-402e-9a1e-07eb0a2eefc5",
+    "addresses": ["0xcd95802a4abddd75a5750dd2d6935007ef268275"]
+  },
+  {
+    "name": "Alpha Marketplace",
+    "url": "https://alpha.snipersearch.fun",
+    "description": "Trade alpha, not rumors. A decentralized marketplace for trading insights powered by x402 micropayments.",
+    "x402scan_url": "https://www.x402scan.com/server/36990778-1eb6-446b-96b9-f73ae426e82b",
+    "addresses": ["0x5dbaacff0bf40fa40778d6e99a91811168d2f3cb"]
+  },
+  {
+    "name": "Heurist Mesh",
+    "url": "https://mesh.heurist.xyz",
+    "description": "Generated by create next app",
+    "x402scan_url": "https://www.x402scan.com/server/b35e8d6c-7f30-4620-8a87-bf9e6b175f08",
+    "addresses": ["0x7d9d1821d15b9e0b8ab98a058361233e255e405d", "EAjHeMbh74YTddmTCWQ6PMXaR3fJPzKG9VEdKR4mPCcc"]
+  },
+  {
+    "name": "Decentralized GPU LLM Inference | Jatevo (DGON)",
+    "url": "https://jatevo.ai",
+    "description": "The Distributed GPU LLM Inference Network. Route your prompts across a decentralized network of GPUs for low-latency, cost-efficient LLM inference.",
+    "x402scan_url": "https://www.x402scan.com/server/e58ae772-022e-4686-a32c-cbdd8e1aa542",
+    "addresses": ["0x892e4feed0128f11d486fd451aff4a78171c8748", "0xa3320f09b78123b5f26ebf966c233058a922c809", "53CvrbpSQvU4gyxye6SP5DnyqKouLoqxnpZBCpoF4BGF"]
+  },
+  {
+    "name": "x402 Payment Demo - Creative Tim",
+    "url": "https://x402.creative-tim.com",
+    "description": "Blockchain micropayments demo using x402 Protocol on Base Network. Purchase UI/UX resources and component blocks with cryptocurrency.",
+    "x402scan_url": "https://www.x402scan.com/server/5ddca8b0-45b8-487a-b1fb-5bd819df7103",
+    "addresses": ["0x45ac00db8bdd4b837abbbf75888cbdfe6b6d8943"]
+  },
+  {
+    "name": "x402Factory.ai - Where everything becomes an endpoint",
+    "url": "https://x402factory.ai",
+    "description": "Building blocks for the agent economy. Pay-per-use x402 endpoints on Solana and Base.",
+    "x402scan_url": "https://www.x402scan.com/server/eb930d76-a336-4232-8115-754dbdffcb9e",
+    "addresses": ["0x402b79ecb8c09348739e17efc14768066de645fe", "0x402faccc3faeb72351cc2b68c7966faf5f22b0d4", "AGENTxr77msTPAmGk4DwdumueVAa3SvtyrpTf6tWMeWD", "BRiDGeEqiNGZrvLWCHLBmfwuagC3cUhAEFzYCaJDFCME", "CASHqrzUwRPcM2rHBaXv7DoAZD4eRsgc57nCVxF38VLB"]
+  },
+  {
+    "name": "pro-api.coingecko.com",
+    "url": "https://pro-api.coingecko.com",
+    "description": "",
+    "x402scan_url": "https://www.x402scan.com/server/fc92cd8a-4f14-41a8-b15e-faf19226974a",
+    "addresses": ["0x110cdbba7fe6434ec4ce3464cc523942ad6fb784", "8XhngTRitTcUJMiaDJ6azw8GRSiFPpwhnmV3HYQLHUpL"]
+  },
+  {
+    "name": "x402 Singularity Layer",
+    "url": "https://api.x402layer.cc",
+    "description": "Internet's unified commerce layer for the Homo-Agentic economy.",
+    "x402scan_url": "https://www.x402scan.com/server/280585ee-0a57-4714-a424-f494831b82c7",
+    "addresses": ["0x86646054f1d16749b7832d0f111df44cf4a0d33f", "0xcd95802a4abddd75a5750dd2d6935007ef268275", "3rcdSzTam4h5e6UN2USv5L2t9R4Ah466B4mHgxRVEqCx"]
+  },
+  {
+    "name": "WURK API - x402 Micropayments",
+    "url": "https://wurkapi.fun",
+    "description": "Decentralized engagement services powered by x402 micropayments. Likes, reposts, comments on X, Instagram, YouTube, and more.",
+    "x402scan_url": "https://www.x402scan.com/server/687b3a58-2347-454f-818b-2cf1b58e7a69",
+    "addresses": ["0xf00daf15713e82fbb7bdc4b818444d93d655de96", "SAT8g2xU7AFy7eUmNJ9SNrM6yYo7LDCi13GXJ8Ez9kC"]
+  },
+  {
+    "name": "Open x402 Facilitator",
+    "url": "http://open.x402.host",
+    "description": "Open x402 Facilitator - Any x402 server can use without keys or KYC.",
+    "x402scan_url": "https://www.x402scan.com/server/403e1557-553b-4860-a489-56e50c52bfd9",
+    "addresses": ["0x97316fa4730bc7d3b295234f8e4d04a0a4c093e8"]
+  },
+  {
+    "name": "x402-solana-lottery.alexwlex143.workers.dev",
+    "url": "https://x402-solana-lottery.alexwlex143.workers.dev",
+    "description": "",
+    "x402scan_url": "https://www.x402scan.com/server/3d527837-c269-4a97-a649-ff45271c4789",
+    "addresses": ["d8X2MdS7QMiMFVWzYMVTeKhm1BVx75GoHskf9ws74nM"]
+  },
+  {
+    "name": "BotPay - A2A/M2M Payment Network",
+    "url": "https://mvp.botpay.network",
+    "description": "BotPay: A2A/M2M payment network. Native wallets, M2M protocol, compliant tax gateway, energy/compute tokenization market.",
+    "x402scan_url": "https://www.x402scan.com/server/c94c6f2c-67ef-40d3-859b-8766f054624e",
+    "addresses": ["0x9b8c75cbd0d6da2a742461567b644c09dc6a295a", "0xa0b01586039f9b4ff5ebc2ca77b6fbb36093e3d3"]
+  },
+  {
+    "name": "x402.org",
+    "url": "https://x402-demo-discovery-endpoint.vercel.app",
+    "description": "A chain-agnostic protocol for web payments",
+    "x402scan_url": "https://www.x402scan.com/server/9f358c8f-be0a-4144-9d20-ae6ceab6057e",
+    "addresses": ["0x021028695eafdde60e139d87000a8bd6cb65645e"]
+  },
+  {
+    "name": "Ask Surf",
+    "url": "https://x402.asksurf.ai",
+    "description": "Surf is an AI intelligence platform for digital assets that delivers accurate, trusted insights through a simple chat interface.",
+    "x402scan_url": "https://www.x402scan.com/server/d62e8d45-fb0f-4043-b014-4f65fb182886",
+    "addresses": ["0x4e2ef8df36a74b168333e92686018c3b3fb2e3e7", "HadxDtiEuPnBPMB7oCi5qfTpwQjT48yR1uwZ3pTcvXwb"]
+  },
+  {
+    "name": "Minara AI",
+    "url": "https://x402.minara.ai",
+    "description": "Minara is your all-in-one AI platform for digital finance. Ask, analyze and vibe trading crypto & U.S. stocks.",
+    "x402scan_url": "https://www.x402scan.com/server/66307a3c-aeb9-4508-9531-71eed69bc9b5",
+    "addresses": ["0xcf5815e9063fa0b04be0cb5c1db583eef9ef5fbb", "64sM1mxGj32Wz9zz2XvBAaK1KMfK16QhBimXGt454VCV"]
+  }
+]

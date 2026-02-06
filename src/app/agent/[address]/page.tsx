@@ -56,6 +56,10 @@ interface AgentDetail {
     erc8004_feedback_count: number;
     erc8004_feedback_raw_count: number;
     erc8004_avg_score: number | null;
+    server_name: string | null;
+    server_url: string | null;
+    server_description: string | null;
+    server_x402scan_url: string | null;
   };
   edges: Array<{
     source: string;
@@ -85,16 +89,34 @@ const ROLE_DISPLAY: Record<string, { label: string; color: string }> = {
   registered_only: { label: 'Registered Agent', color: '#10B981' },
 };
 
+const EXPLORER_TX: Record<string, string> = {
+  base: 'https://basescan.org/tx/',
+  ethereum: 'https://etherscan.io/tx/',
+  polygon: 'https://polygonscan.com/tx/',
+  bsc: 'https://bscscan.com/tx/',
+  scroll: 'https://scrollscan.com/tx/',
+  gnosis: 'https://gnosisscan.io/tx/',
+  solana: 'https://solscan.io/tx/',
+};
+
+const EXPLORER_ADDRESS: Record<string, string> = {
+  base: 'https://basescan.org/address/',
+  ethereum: 'https://etherscan.io/address/',
+  polygon: 'https://polygonscan.com/address/',
+  bsc: 'https://bscscan.com/address/',
+  scroll: 'https://scrollscan.com/address/',
+  gnosis: 'https://gnosisscan.io/address/',
+  solana: 'https://solscan.io/account/',
+};
+
 function blockExplorerUrl(chain: string, txHash: string): string {
-  const explorers: Record<string, string> = {
-    base: 'https://basescan.org/tx/',
-    ethereum: 'https://etherscan.io/tx/',
-    polygon: 'https://polygonscan.com/tx/',
-    bsc: 'https://bscscan.com/tx/',
-    scroll: 'https://scrollscan.com/tx/',
-    gnosis: 'https://gnosisscan.io/tx/',
-  };
-  return `${explorers[chain] || explorers.ethereum}${txHash}`;
+  return `${EXPLORER_TX[chain] || EXPLORER_TX.base}${txHash}`;
+}
+
+function addressExplorerUrl(address: string, chains: string[]): string {
+  const isSolana = !address.startsWith('0x');
+  const chain = isSolana ? 'solana' : (chains[0] || 'base');
+  return `${EXPLORER_ADDRESS[chain] || EXPLORER_ADDRESS.base}${address}`;
 }
 
 export default function AgentPage({ params }: { params: Promise<{ address: string }> }) {
@@ -213,12 +235,20 @@ export default function AgentPage({ params }: { params: Promise<{ address: strin
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <ReputationBadge score={agent.reputation_score} size="md" />
           <div className="flex-1 min-w-0">
-            {agent.erc8004_name && (
-              <h1 className="text-xl sm:text-2xl font-semibold text-white mb-1">{agent.erc8004_name}</h1>
+            {(agent.erc8004_name || agent.server_name) && (
+              <h1 className="text-xl sm:text-2xl font-semibold text-white mb-1">{agent.erc8004_name || agent.server_name}</h1>
             )}
-            <p className={`font-mono text-white break-all ${agent.erc8004_name ? 'text-sm text-zinc-400' : 'text-lg sm:text-xl'}`}>
+            <a
+              href={addressExplorerUrl(agent.address, agent.chains)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`font-mono break-all inline-flex items-center gap-1.5 hover:text-white transition-colors ${(agent.erc8004_name || agent.server_name) ? 'text-sm text-zinc-400' : 'text-lg sm:text-xl text-white'}`}
+            >
               {agent.address}
-            </p>
+              <svg className="w-3.5 h-3.5 flex-shrink-0 opacity-50" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M6.5 3.5H3.5C2.95 3.5 2.5 3.95 2.5 4.5V12.5C2.5 13.05 2.95 13.5 3.5 13.5H11.5C12.05 13.5 12.5 13.05 12.5 12.5V9.5M9.5 2.5H13.5M13.5 2.5V6.5M13.5 2.5L7 9" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
             <div className="flex flex-wrap items-center gap-2 mt-2">
               <Badge
                 variant="outline"
@@ -253,6 +283,40 @@ export default function AgentPage({ params }: { params: Promise<{ address: strin
             </div>
           </div>
         </div>
+
+        {/* x402 Server Card */}
+        {agent.server_name && (
+          <div className="bg-blue-950/20 border border-blue-500/20 rounded-xl p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-2.5 h-2.5 rounded-full bg-blue-400" />
+              <h2 className="text-sm font-medium text-blue-300">x402 Server</h2>
+              {agent.server_x402scan_url && (
+                <a
+                  href={agent.server_x402scan_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-auto text-[10px] text-zinc-500 hover:text-zinc-300"
+                >
+                  View on x402scan
+                </a>
+              )}
+            </div>
+            <h3 className="text-base font-semibold text-white mb-1">{agent.server_name}</h3>
+            {agent.server_description && (
+              <p className="text-sm text-zinc-400 mb-3 leading-relaxed">{agent.server_description}</p>
+            )}
+            {agent.server_url && (
+              <a
+                href={agent.server_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-blue-400 hover:text-blue-300"
+              >
+                {agent.server_url}
+              </a>
+            )}
+          </div>
+        )}
 
         {/* ERC-8004 Identity Card */}
         {agent.erc8004_registered && erc8004.registrations.length > 0 && (

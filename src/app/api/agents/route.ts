@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { computeReputationScore } from '@/lib/reputation';
 import { deduplicateFeedback } from '@/lib/feedback-dedup';
+import { lookupServer } from '@/lib/server-lookup';
 import type { Agent } from '@/lib/types';
 
 import agentsData from '../../../../public/data/agents.json';
@@ -200,6 +201,15 @@ export async function GET() {
         agent.erc8004_feedback_count = feedback?.deduped_count || 0;
         agent.erc8004_feedback_raw_count = feedback?.raw_count || 0;
         agent.erc8004_avg_score = feedback?.avg_score ?? null;
+      }
+
+      // Enrich with x402scan server info
+      const server = lookupServer(addr);
+      if (server) {
+        agent.server_name = server.name;
+        agent.server_url = server.url;
+        agent.server_description = server.description;
+        agent.server_x402scan_url = server.x402scan_url;
       }
 
       // Compute reputation score
