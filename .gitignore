@@ -25,6 +25,9 @@ CLAUDE.md
 .DS_Store
 *.pem
 
+# local data cache (dev only)
+/public/data/*.json
+
 # debug
 npm-debug.log*
 yarn-debug.log*

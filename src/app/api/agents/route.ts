@@ -3,11 +3,11 @@ import { computeReputationScore } from '@/lib/reputation';
 import { deduplicateFeedback } from '@/lib/feedback-dedup';
 import { lookupServer } from '@/lib/server-lookup';
 import type { Agent } from '@/lib/types';
+import { getCachedData } from '@/lib/redis-cache';
+import { fetchers } from '@/lib/data-fetchers';
 
-import agentsData from '../../../../public/data/agents.json';
-import participantsData from '../../../../public/data/participants.json';
-import erc8004AgentsData from '../../../../public/data/erc8004_agents.json';
-import erc8004FeedbackData from '../../../../public/data/erc8004_feedback.json';
+export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 
 function parseArrayField(field: unknown): string[] {
   if (Array.isArray(field)) return field;
@@ -22,9 +22,10 @@ function parseArrayField(field: unknown): string[] {
 }
 
 // Build 8004 lookup: owner_address -> aggregated registration info
-function buildErc8004Lookup() {
-  const erc8004Agents = erc8004AgentsData as Record<string, unknown>[];
-  const erc8004Feedback = erc8004FeedbackData as Record<string, unknown>[];
+function buildErc8004Lookup(
+  erc8004Agents: Record<string, unknown>[],
+  erc8004Feedback: Record<string, unknown>[]
+) {
 
   // Group registrations by owner
   const ownerMap = new Map<string, {
@@ -92,7 +93,18 @@ function buildErc8004Lookup() {
 
 export async function GET() {
   try {
-    const { ownerMap, ownerFeedback } = buildErc8004Lookup();
+    // Fetch all data in parallel
+    const [agentsData, participantsData, erc8004AgentsData, erc8004FeedbackData] = await Promise.all([
+      getCachedData('agents', fetchers.agents.fetch, fetchers.agents.fallback),
+      getCachedData('participants', fetchers.participants.fetch, fetchers.participants.fallback),
+      getCachedData('erc8004_agents', fetchers.erc8004_agents.fetch, fetchers.erc8004_agents.fallback),
+      getCachedData('erc8004_feedback', fetchers.erc8004_feedback.fetch, fetchers.erc8004_feedback.fallback),
+    ]);
+
+    const { ownerMap, ownerFeedback } = buildErc8004Lookup(
+      erc8004AgentsData as Record<string, unknown>[],
+      erc8004FeedbackData as Record<string, unknown>[]
+    );
     const rawAgents = agentsData as Record<string, unknown>[];
     const rawParticipants = participantsData as Record<string, unknown>[];
 

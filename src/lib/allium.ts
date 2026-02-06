@@ -20,6 +20,7 @@ export async function runExplorerQuery<T>(queryId: string): Promise<T[]> {
       'X-API-Key': apiKey,
       'Content-Type': 'application/json',
     },
+    body: JSON.stringify({}),
   });
 
   if (!runRes.ok) {

@@ -2,12 +2,11 @@ import { NextResponse } from 'next/server';
 import { computeReputationScore } from '@/lib/reputation';
 import { deduplicateFeedback, annotateFeedback } from '@/lib/feedback-dedup';
 import { lookupServer } from '@/lib/server-lookup';
+import { getCachedData } from '@/lib/redis-cache';
+import { fetchers } from '@/lib/data-fetchers';
 
-import agentsData from '../../../../../public/data/agents.json';
-import participantsData from '../../../../../public/data/participants.json';
-import edgesData from '../../../../../public/data/edges.json';
-import erc8004AgentsData from '../../../../../public/data/erc8004_agents.json';
-import erc8004FeedbackData from '../../../../../public/data/erc8004_feedback.json';
+export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 
 function parseArrayField(field: unknown): string[] {
   if (Array.isArray(field)) return field;
@@ -23,6 +22,15 @@ export async function GET(
 ) {
   const { address } = await params;
   const addr = address.toLowerCase();
+
+  // Fetch all data in parallel
+  const [agentsData, participantsData, edgesData, erc8004AgentsData, erc8004FeedbackData] = await Promise.all([
+    getCachedData('agents', fetchers.agents.fetch, fetchers.agents.fallback),
+    getCachedData('participants', fetchers.participants.fetch, fetchers.participants.fallback),
+    getCachedData('graph_edges', fetchers.graph_edges.fetch, fetchers.graph_edges.fallback),
+    getCachedData('erc8004_agents', fetchers.erc8004_agents.fetch, fetchers.erc8004_agents.fallback),
+    getCachedData('erc8004_feedback', fetchers.erc8004_feedback.fetch, fetchers.erc8004_feedback.fallback),
+  ]);
 
   // Try agents.json first (service providers with full data)
   const rawAgents = agentsData as Record<string, unknown>[];

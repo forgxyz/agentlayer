@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
+import { getCachedData } from '@/lib/redis-cache';
+import { fetchers } from '@/lib/data-fetchers';
 
-import facilitatorsData from '../../../../../public/data/facilitators.json';
-import edgesData from '../../../../../public/data/edges.json';
-import agentsData from '../../../../../public/data/agents.json';
+export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 
 function parseArrayField(field: unknown): string[] {
   if (Array.isArray(field)) return field;
@@ -18,6 +19,13 @@ export async function GET(
 ) {
   const { name } = await params;
   const decodedName = decodeURIComponent(name);
+
+  // Fetch all data in parallel
+  const [facilitatorsData, edgesData, agentsData] = await Promise.all([
+    getCachedData('facilitators', fetchers.facilitators.fetch, fetchers.facilitators.fallback),
+    getCachedData('graph_edges', fetchers.graph_edges.fetch, fetchers.graph_edges.fallback),
+    getCachedData('agents', fetchers.agents.fetch, fetchers.agents.fallback),
+  ]);
 
   const facs = facilitatorsData as Record<string, unknown>[];
   const raw = facs.find(
