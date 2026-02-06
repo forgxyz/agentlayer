@@ -70,21 +70,26 @@ export async function fetchLatestQueryRun<T>(queryId: string): Promise<T[]> {
   const apiKey = process.env.ALLIUM_API_KEY;
   if (!apiKey) throw new Error('ALLIUM_API_KEY not set');
 
-  // Get latest run metadata
+  // Get latest run metadata (returns QueryRun object)
   const runRes = await fetch(
     `${ALLIUM_API_BASE}/query-runs?query_id=${queryId}`,
     { headers: { 'X-API-Key': apiKey } }
   );
 
   if (!runRes.ok) {
-    throw new Error(`Failed to fetch latest run metadata: ${runRes.status} ${await runRes.text()}`);
+    throw new Error(`Failed to fetch latest run: ${runRes.status} ${await runRes.text()}`);
   }
 
   const runData = await runRes.json();
-  const runId = runData.run_id;
 
+  // Check if it's a successful run with results
+  if (runData.status !== 'success') {
+    throw new Error(`Latest run status: ${runData.status}`);
+  }
+
+  const runId = runData.run_id;
   if (!runId) {
-    throw new Error('No run_id found in latest run metadata');
+    throw new Error('No run_id found in latest run');
   }
 
   // Fetch results for that run
