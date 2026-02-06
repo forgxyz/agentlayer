@@ -58,16 +58,17 @@ export async function POST(request: Request) {
 
   const url = new URL(request.url);
   const prewarm = url.searchParams.get('prewarm') === 'true';
+  const useFast = url.searchParams.get('profile') === 'fast'; // Use speedy_ultra profile
   const datasets = url.searchParams.get('datasets')?.split(',') || null;
 
   // Invalidate cache
   if (datasets) {
     // Invalidate specific datasets
     for (const key of datasets) {
-      invalidateAll(); // For now, just invalidate all (fine-grained per-key later if needed)
+      await invalidateAll(); // For now, just invalidate all (fine-grained per-key later if needed)
     }
   } else {
-    invalidateAll();
+    await invalidateAll();
   }
 
   let prewarmed: string[] = [];
@@ -77,7 +78,9 @@ export async function POST(request: Request) {
       const fetcher = fetchers[key as DatasetKey];
       if (!fetcher) return null;
       try {
-        await getCachedData(key, fetcher.fetch, fetcher.fallback);
+        // Use fast profile if requested, otherwise default
+        const fetchFn = useFast ? fetcher.fetchFast : fetcher.fetch;
+        await getCachedData(key, fetchFn, fetcher.fallback);
         return key;
       } catch (error) {
         console.error(`Failed to prewarm ${key}:`, error);
@@ -95,6 +98,7 @@ export async function POST(request: Request) {
     success: true,
     invalidated: datasets || 'all',
     prewarmed: prewarm ? prewarmed : null,
+    profile: useFast ? 'speedy_ultra' : 'default',
     timestamp: new Date().toISOString(),
   });
 }

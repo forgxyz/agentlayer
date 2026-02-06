@@ -9,18 +9,22 @@ interface QueryResult<T> {
   };
 }
 
-export async function runExplorerQuery<T>(queryId: string): Promise<T[]> {
+export async function runExplorerQuery<T>(
+  queryId: string,
+  computeProfile?: string
+): Promise<T[]> {
   const apiKey = process.env.ALLIUM_API_KEY;
   if (!apiKey) throw new Error('ALLIUM_API_KEY not set');
 
   // Start query run
+  const body = computeProfile ? { compute_profile: computeProfile } : {};
   const runRes = await fetch(`${ALLIUM_API_BASE}/queries/${queryId}/run`, {
     method: 'POST',
     headers: {
       'X-API-Key': apiKey,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({}),
+    body: JSON.stringify(body),
   });
 
   if (!runRes.ok) {
@@ -57,4 +61,24 @@ export async function runExplorerQuery<T>(queryId: string): Promise<T[]> {
   }
 
   throw new Error('Query timed out');
+}
+
+/**
+ * Fetch the latest completed query run results (doesn't start a new run)
+ */
+export async function fetchLatestQueryRun<T>(queryId: string): Promise<T[]> {
+  const apiKey = process.env.ALLIUM_API_KEY;
+  if (!apiKey) throw new Error('ALLIUM_API_KEY not set');
+
+  const resultsRes = await fetch(
+    `${ALLIUM_API_BASE}/queries/${queryId}/latest-run/results?f=json`,
+    { headers: { 'X-API-Key': apiKey } }
+  );
+
+  if (!resultsRes.ok) {
+    throw new Error(`Failed to fetch latest run: ${resultsRes.status} ${await resultsRes.text()}`);
+  }
+
+  const result: QueryResult<T> = await resultsRes.json();
+  return result.data;
 }
