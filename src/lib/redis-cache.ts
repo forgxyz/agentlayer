@@ -21,8 +21,8 @@ interface CacheConfig {
 }
 
 const DEFAULT_CONFIG: CacheConfig = {
-  ttl: 5 * 60, // 5 minutes fresh
-  staleTime: 55 * 60, // 55 minutes stale (60 min total)
+  ttl: 24 * 60 * 60, // 24 hours fresh (hackathon mode)
+  staleTime: 0, // No stale serving (data stays fresh for 24h)
 };
 
 // Initialize Redis client (Upstash for production, IORedis for local)

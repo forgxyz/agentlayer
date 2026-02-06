@@ -6,9 +6,9 @@ interface MeshControlsProps {
   onFit: () => void;
 }
 
-export default function MeshControls({ tier, onTierChange, onFit }: MeshControlsProps) {
+export default function MeshControls({ tier, onTierChange }: MeshControlsProps) {
   return (
-    <div className="absolute top-4 left-4 z-40 flex flex-col gap-2">
+    <div className="absolute top-4 left-4 z-40">
       <div className="flex items-center gap-1 bg-zinc-900/90 border border-white/10 rounded-lg p-1 backdrop-blur-xl">
         <button
           onClick={() => onTierChange('facilitator')}
@@ -31,12 +31,6 @@ export default function MeshControls({ tier, onTierChange, onFit }: MeshControls
           Top Agents
         </button>
       </div>
-      <button
-        onClick={onFit}
-        className="bg-zinc-900/90 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-zinc-400 hover:text-white transition-all backdrop-blur-xl w-fit"
-      >
-        Fit View
-      </button>
     </div>
   );
 }

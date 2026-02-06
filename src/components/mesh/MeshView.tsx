@@ -201,10 +201,6 @@ export default function MeshView({ graphData, facilitatorData, onNodeSelect }: M
     };
   }, [tier, graphData, facilitatorData, onNodeSelect]);
 
-  const handleFit = useCallback(() => {
-    cyRef.current?.fit(undefined, 50);
-  }, []);
-
   const handleTierChange = useCallback((newTier: 'facilitator' | 'agents') => {
     setTier(newTier);
     setSelectedNode(null);
@@ -215,8 +211,16 @@ export default function MeshView({ graphData, facilitatorData, onNodeSelect }: M
       <MeshControls
         tier={tier}
         onTierChange={handleTierChange}
-        onFit={handleFit}
       />
+
+      {/* Help text */}
+      <div className="absolute top-20 left-4 z-30 bg-zinc-900/95 border border-white/10 rounded-lg p-3 backdrop-blur-sm max-w-xs">
+        <p className="text-[10px] text-zinc-400 leading-relaxed">
+          <span className="text-white font-medium">Nodes</span> represent individual agent addresses.
+          Labels show the <span className="text-blue-400">primary facilitator</span> each agent uses (by volume).
+          <span className="text-white font-medium ml-1">Edges</span> show payment flows between agents.
+        </p>
+      </div>
 
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center z-30">

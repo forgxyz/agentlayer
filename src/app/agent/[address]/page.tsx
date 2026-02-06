@@ -322,6 +322,54 @@ export default function AgentPage({ params }: { params: Promise<{ address: strin
           </div>
         </div>
 
+        {/* Reputation Score Breakdown */}
+        <div className="bg-zinc-900/40 border border-white/5 rounded-xl p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <h2 className="text-sm font-medium text-white">Reputation Score Breakdown</h2>
+            <Badge variant="outline" className="text-xs border-white/10">
+              Score: {agent.reputation_score}/100
+            </Badge>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div>
+              <p className="text-[10px] text-zinc-500 uppercase mb-1">Economic (30%)</p>
+              <p className="text-sm text-white font-semibold">
+                {Math.round(Math.min(Math.log10(agent.total_received_usd + 1) / 7.4, 1) * 30)}
+              </p>
+              <p className="text-[10px] text-zinc-600">
+                {formatUSD(agent.total_received_usd)} volume
+              </p>
+            </div>
+            <div>
+              <p className="text-[10px] text-zinc-500 uppercase mb-1">Diversity (30%)</p>
+              <p className="text-sm text-white font-semibold">
+                {Math.round(Math.min(agent.unique_requesters / 100, 1) * 30)}
+              </p>
+              <p className="text-[10px] text-zinc-600">
+                {agent.unique_requesters} requesters
+              </p>
+            </div>
+            <div>
+              <p className="text-[10px] text-zinc-500 uppercase mb-1">Activity (20%)</p>
+              <p className="text-sm text-white font-semibold">
+                {Math.round(Math.min(Math.log10(agent.tx_count + 1) / 7.4, 1) * 20)}
+              </p>
+              <p className="text-[10px] text-zinc-600">
+                {formatNumber(agent.tx_count)} txs
+              </p>
+            </div>
+            <div>
+              <p className="text-[10px] text-zinc-500 uppercase mb-1">Feedback (20%)</p>
+              <p className="text-sm text-white font-semibold">
+                {Math.round((agent.erc8004_avg_score ? Math.min(agent.erc8004_avg_score / 100, 1) : 0.5) * 20)}
+              </p>
+              <p className="text-[10px] text-zinc-600">
+                {agent.erc8004_avg_score != null ? `${agent.erc8004_avg_score.toFixed(1)} avg` : 'No feedback (50%)'}
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* x402 Server Card */}
         {agent.server_name && (
           <div className="bg-blue-950/20 border border-blue-500/20 rounded-xl p-5">
