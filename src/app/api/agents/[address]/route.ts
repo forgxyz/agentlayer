@@ -62,9 +62,14 @@ export async function GET(
     (a) => String(a.owner_address || '').toLowerCase() === addr
   );
 
-  // If not in any dataset, 404
+  // If not in any dataset, return friendly message for hackathon demo
   if (!agentRaw && !participantRaw && erc8004Agents.length === 0) {
-    return NextResponse.json({ error: 'Address not found' }, { status: 404 });
+    return NextResponse.json({
+      not_in_dataset: true,
+      address: addr,
+      message: 'This agent is not in our current sample dataset',
+      hint: 'Try searching for active agents from the directory or graph view',
+    });
   }
 
   // Build agent profile from x402 data
