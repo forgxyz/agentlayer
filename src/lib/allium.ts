@@ -17,7 +17,9 @@ export async function runExplorerQuery<T>(
   if (!apiKey) throw new Error('ALLIUM_API_KEY not set');
 
   // Start query run
-  const body = computeProfile ? { compute_profile: computeProfile } : {};
+  const body = computeProfile
+    ? { run_config: { compute_profile: computeProfile } }
+    : {};
   const runRes = await fetch(`${ALLIUM_API_BASE}/queries/${queryId}/run`, {
     method: 'POST',
     headers: {
