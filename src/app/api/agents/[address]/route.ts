@@ -23,14 +23,27 @@ export async function GET(
   const { address } = await params;
   const addr = address.toLowerCase();
 
-  // Fetch all data in parallel
-  const [agentsData, participantsData, edgesData, erc8004AgentsData, erc8004FeedbackData] = await Promise.all([
-    getCachedData('agents', fetchers.agents.fetch, fetchers.agents.fallback),
-    getCachedData('participants', fetchers.participants.fetch, fetchers.participants.fallback),
-    getCachedData('graph_edges', fetchers.graph_edges.fetch, fetchers.graph_edges.fallback),
-    getCachedData('erc8004_agents', fetchers.erc8004_agents.fetch, fetchers.erc8004_agents.fallback),
-    getCachedData('erc8004_feedback', fetchers.erc8004_feedback.fetch, fetchers.erc8004_feedback.fallback),
-  ]);
+  // Fetch all data in parallel with error handling
+  let agentsData, participantsData, edgesData, erc8004AgentsData, erc8004FeedbackData;
+  try {
+    [agentsData, participantsData, edgesData, erc8004AgentsData, erc8004FeedbackData] = await Promise.all([
+      getCachedData('agents', fetchers.agents.fetch, fetchers.agents.fallback),
+      getCachedData('participants', fetchers.participants.fetch, fetchers.participants.fallback),
+      getCachedData('graph_edges', fetchers.graph_edges.fetch, fetchers.graph_edges.fallback),
+      getCachedData('erc8004_agents', fetchers.erc8004_agents.fetch, fetchers.erc8004_agents.fallback),
+      getCachedData('erc8004_feedback', fetchers.erc8004_feedback.fetch, fetchers.erc8004_feedback.fallback),
+    ]);
+  } catch (error) {
+    console.error('Failed to fetch data for agent detail:', error);
+    return NextResponse.json(
+      {
+        error: 'Failed to fetch agent data',
+        message: error instanceof Error ? error.message : 'Unknown error',
+        address: addr,
+      },
+      { status: 503 }
+    );
+  }
 
   // Try agents.json first (service providers with full data)
   const rawAgents = agentsData as Record<string, unknown>[];

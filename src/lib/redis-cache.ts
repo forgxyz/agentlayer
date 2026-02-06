@@ -60,6 +60,10 @@ if (isProduction) {
 // Track in-flight requests to prevent duplicate fetches
 const inflightRequests = new Map<string, Promise<unknown>>();
 
+// Track failed refresh attempts to implement backoff
+const failedRefreshes = new Map<string, { timestamp: number; attempts: number }>();
+const REFRESH_COOLDOWN_MS = 60000; // 1 minute cooldown after failed refresh
+
 // Adapter functions to normalize Upstash vs IORedis APIs
 async function get<T>(key: string): Promise<T | null> {
   if (isProduction) {
@@ -131,8 +135,17 @@ export async function getCachedData<T>(
     // Stale cache - serve stale while revalidating in background
     if (data && metaRaw && now - metaRaw.timestamp < config.ttl + config.staleTime) {
       console.log(`⚡ Cache HIT (stale) for ${key} - refreshing in background`);
+
+      // Check if we recently failed to refresh this key
+      const failedRefresh = failedRefreshes.get(key);
+      const nowMs = Date.now();
+      if (failedRefresh && nowMs - failedRefresh.timestamp < REFRESH_COOLDOWN_MS) {
+        console.log(`⏸️  Skipping refresh for ${key} (cooldown: ${Math.ceil((REFRESH_COOLDOWN_MS - (nowMs - failedRefresh.timestamp)) / 1000)}s remaining)`);
+        return data;
+      }
+
       // Trigger background refresh (don't await)
-      refreshInBackground(cacheKey, metaKey, fetchFn, config).catch(err => {
+      refreshInBackground(cacheKey, metaKey, key, fetchFn, config).catch(err => {
         console.error(`Background refresh failed for ${key}:`, err);
       });
       return data;
@@ -217,16 +230,24 @@ async function saveToRedis<T>(
 async function refreshInBackground<T>(
   cacheKey: string,
   metaKey: string,
+  key: string,
   fetchFn: () => Promise<T>,
   config: CacheConfig
 ): Promise<void> {
   try {
     const data = await fetchFn();
     await saveToRedis(cacheKey, metaKey, data, config);
-    const key = cacheKey.replace('agentlayer:', '');
     console.log(`🔄 Background refresh completed for ${key}`);
+    // Clear failed refresh tracking on success
+    failedRefreshes.delete(key);
   } catch (error) {
     console.error(`Background refresh failed:`, error);
+    // Track failed refresh with timestamp
+    const existing = failedRefreshes.get(key);
+    failedRefreshes.set(key, {
+      timestamp: Date.now(),
+      attempts: (existing?.attempts || 0) + 1,
+    });
     // Keep serving stale data on error
   }
 }
@@ -236,6 +257,7 @@ export async function invalidate(key: string): Promise<void> {
   const metaKey = `${cacheKey}:meta`;
   await del(cacheKey, metaKey);
   inflightRequests.delete(key);
+  failedRefreshes.delete(key);
 }
 
 export async function invalidateAll(): Promise<void> {
@@ -246,6 +268,7 @@ export async function invalidateAll(): Promise<void> {
     await del(...cacheKeys);
   }
   inflightRequests.clear();
+  failedRefreshes.clear();
 }
 
 export async function getCacheStatus(key: string): Promise<{
