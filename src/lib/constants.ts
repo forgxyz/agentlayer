@@ -1,6 +1,6 @@
 export const CHAIN_COLORS: Record<string, string> = {
   base: '#0052FF',
-  solana: '#9945FF',
+  solana: '#14F195',  // Solana brand green
   polygon: '#8247E5',
   ethereum: '#627EEA',
   bsc: '#F0B90B',

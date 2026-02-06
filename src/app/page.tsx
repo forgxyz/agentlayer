@@ -21,6 +21,7 @@ export default function Home() {
   const [agents, setAgents] = useState<Agent[]>([]);
   const [flows, setFlows] = useState<DailyFlow[]>([]);
   const [facilitators, setFacilitators] = useState<Facilitator[]>([]);
+  const [erc8004Agents, setErc8004Agents] = useState<Array<{ owner_address: string }>>([]);
   const [selectedAgent, setSelectedAgent] = useState<string | null>(null);
   const [timeWindow, setTimeWindow] = useState<TimeWindow>('24h');
   const [loading, setLoading] = useState(true);
@@ -28,23 +29,26 @@ export default function Home() {
   useEffect(() => {
     async function loadData() {
       try {
-        const [graphRes, agentsRes, flowsRes, facRes] = await Promise.all([
+        const [graphRes, agentsRes, flowsRes, facRes, erc8004Res] = await Promise.all([
           fetch('/api/graph'),
           fetch('/api/agents'),
           fetch('/api/flows'),
           fetch('/api/facilitators'),
+          fetch('/api/erc8004'),
         ]);
 
         const graphData = await graphRes.json();
         const agentsData = await agentsRes.json();
         const flowsData = await flowsRes.json();
         const facData = await facRes.json();
+        const erc8004Data = await erc8004Res.json();
 
         setNodes(graphData.nodes || []);
         setEdges(graphData.edges || []);
         setAgents(agentsData || []);
         setFlows(flowsData || []);
         setFacilitators(facData || []);
+        setErc8004Agents(erc8004Data || []);
       } catch (err) {
         console.error('Failed to load data:', err);
       } finally {
@@ -77,19 +81,30 @@ export default function Home() {
   }, [filteredFacilitators]);
 
   const heroStats = useMemo(() => {
-    const totalVolume = filteredFacilitators.reduce((s, f) => s + f.total_volume_usd, 0);
-    const totalTx = filteredFacilitators.reduce((s, f) => s + f.tx_count, 0);
+    // Calculate volume from filtered flows (daily granularity)
+    const totalVolume = filteredFlows.reduce((s, f) => s + (f.daily_volume_usd || 0), 0);
+
+    // Calculate tx count from filtered flows
+    const totalTx = filteredFlows.reduce((s, f) => s + (f.tx_count || 0), 0);
+
+    // Count x402 agents with activity
     const x402Agents = filteredAgents.filter(a => a.total_value_usd > 0).length;
-    const erc8004Agents = filteredAgents.filter(a => a.erc8004_registered).length;
+
+    // Count unique ERC-8004 owners from raw data
+    const uniqueOwners = new Set(
+      erc8004Agents.map((a: any) => String(a.owner_address || '').toLowerCase())
+    );
+    const erc8004Count = uniqueOwners.size;
+
     return {
       totalVolume,
       totalTx,
       x402Agents,
-      erc8004Agents,
+      erc8004Agents: erc8004Count,
       facilitatorCount: filteredFacilitators.length,
       chainCount: 3,
     };
-  }, [filteredFacilitators, filteredAgents]);
+  }, [filteredFacilitators, filteredAgents, filteredFlows, erc8004Agents]);
 
   const handleNodeSelect = useCallback((nodeId: string | null) => {
     setSelectedAgent(nodeId);
