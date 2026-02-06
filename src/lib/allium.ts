@@ -28,10 +28,17 @@ export async function runExplorerQuery<T>(
   });
 
   if (!runRes.ok) {
-    throw new Error(`Failed to start query: ${runRes.status} ${await runRes.text()}`);
+    const errorText = await runRes.text();
+    throw new Error(`Failed to start query: ${runRes.status} ${errorText}`);
   }
 
-  const { run_id } = await runRes.json();
+  const runData = await runRes.json();
+  const run_id = runData.run_id || runData.id || runData.runId;
+
+  if (!run_id) {
+    console.error('Run response:', JSON.stringify(runData));
+    throw new Error('No run_id in response from query start');
+  }
 
   // Poll for results (5 minutes max for heavy queries)
   for (let i = 0; i < 150; i++) {
