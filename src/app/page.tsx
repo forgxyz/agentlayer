@@ -81,11 +81,15 @@ export default function Home() {
   }, [filteredFacilitators]);
 
   const heroStats = useMemo(() => {
-    // Calculate volume from filtered flows (daily granularity)
-    const totalVolume = filteredFlows.reduce((s, f) => s + (f.daily_volume_usd || 0), 0);
+    // For "All" time, use facilitator totals (full history)
+    // For time windows, use filtered flows (90 days granular data)
+    const totalVolume = timeWindow === 'all'
+      ? facilitators.reduce((s, f) => s + (f.total_volume_usd || 0), 0)
+      : filteredFlows.reduce((s, f) => s + (f.daily_volume_usd || 0), 0);
 
-    // Calculate tx count from filtered flows
-    const totalTx = filteredFlows.reduce((s, f) => s + (f.tx_count || 0), 0);
+    const totalTx = timeWindow === 'all'
+      ? facilitators.reduce((s, f) => s + (f.tx_count || 0), 0)
+      : filteredFlows.reduce((s, f) => s + (f.tx_count || 0), 0);
 
     // Count x402 agents with activity
     const x402Agents = filteredAgents.filter(a => a.total_value_usd > 0).length;
@@ -104,7 +108,7 @@ export default function Home() {
       facilitatorCount: filteredFacilitators.length,
       chainCount: 3,
     };
-  }, [filteredFacilitators, filteredAgents, filteredFlows, erc8004Agents]);
+  }, [filteredFacilitators, filteredAgents, filteredFlows, erc8004Agents, timeWindow, facilitators]);
 
   const handleNodeSelect = useCallback((nodeId: string | null) => {
     setSelectedAgent(nodeId);
