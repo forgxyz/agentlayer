@@ -33,8 +33,8 @@ export async function runExplorerQuery<T>(
 
   const { run_id } = await runRes.json();
 
-  // Poll for results
-  for (let i = 0; i < 60; i++) {
+  // Poll for results (5 minutes max for heavy queries)
+  for (let i = 0; i < 150; i++) {
     await new Promise((r) => setTimeout(r, 2000));
 
     const statusRes = await fetch(
